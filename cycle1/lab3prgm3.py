@@ -1,7 +1,0 @@
-s=0
-lst=input("enter ele of list(comma seperated):")
-lst=[int(x) for x in lst.split(",")]
-lst=[int (ele) for (ele) in lst]
-for i in range(0,len(lst)):
-	s=s+lst[i]
-print("sum of numbers:",s)
