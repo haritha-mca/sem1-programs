@@ -1,0 +1,32 @@
+amstrong.py
+
+def is_armstrong_number(num):
+    order = len(str(num))
+    temp = num
+    sum_of_digits = 0
+    while temp > 0:
+        digit = temp % 10
+        sum_of_digits += digit ** order
+        temp //= 10
+ return num == sum_of_digits
+if __name__ == "__main__":
+    number = int(input("Enter a number to check if it's an Armstrong number: "))
+    if is_armstrong_number(number):
+        print(f"{number} is an Armstrong number.")
+    else:
+        print(f"{number} is not an Armstrong number.")
+main.py
+
+from amstrong import is_armstrong_number
+def generate_armstrong_numbers(start, end):
+     armstrong_numbers = [num for num in range(start, end + 1)
+     if is_armstrong_number(num)]
+        return armstrong_numbers
+if __name__ == "__main__":
+    start_limit = int(input("Enter the start limit: "))
+    end_limit = int(input("Enter the end limit: "))
+    armstrong_numbers = generate_armstrong_numbers(start_limit, end_limit)
+    if armstrong_numbers:
+          print(f"Armstrong numbers between {start_limit} and {end_limit}:  {armstrong_numbers}")
+    else:
+        print(f"No Armstrong numbers found between {start_limit} and {end_limit}.")

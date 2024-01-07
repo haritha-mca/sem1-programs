@@ -1,0 +1,70 @@
+Main.py
+
+
+from graphics.rectangle import calculate_area as rect_area, calculate_perimeter as rect_perimeter
+from graphics.circle import calculate_area as circle_area, calculate_perimeter as circle_perimeter
+from graphics.threeDgraphics.cuboid import calculate_surface_area as cuboid_surface_area, calculate_volume as cuboid_volume
+from graphics.threeDgraphics.sphere import calculate_surface_area as sphere_surface_area, calculate_volume as sphere_volume
+
+
+def main():
+
+	length_rect = float(input("Enter the length of the rectangle: "))
+	width_rect = float(input("Enter the width of the rectangle: "))
+	print(f"Rectangle Area: {rect_area(length_rect, width_rect)}")
+	print(f"Rectangle Perimeter: {rect_perimeter(length_rect, width_rect)}")
+
+	radius_circle = float(input("Enter the radius of the circle: "))
+	print(f"Circle Area: {circle_area(radius_circle)}")
+	print(f"Circle Perimeter: {circle_perimeter(radius_circle)}")
+
+	length_cuboid = float(input("Enter the length of the cuboid: "))
+	width_cuboid = float(input("Enter the width of the cuboid: "))
+	height_cuboid = float(input("Enter the height of the cuboid: "))
+	print(f"Cuboid Surface Area: {cuboid_surface_area(length_cuboid, width_cuboid, height_cuboid)}")
+	print(f"Cuboid Volume: {cuboid_volume(length_cuboid, width_cuboid, height_cuboid)}")
+
+
+	radius_sphere = float(input("Enter the radius of the sphere: "))
+	print(f"Sphere Surface Area: {sphere_surface_area(radius_sphere)}")
+	print(f"Sphere Volume: {sphere_volume(radius_sphere)}")
+
+if __name__ == "__main__":
+	main()
+
+
+Circle.py
+
+                                                                                          	 
+import math
+def calculate_area(radius):
+	return math.pi * radius**2
+def calculate_perimeter(radius):
+	return 2 * math.pi * radius
+
+ Rectangle.py
+
+
+def calculate_area(length, width):
+	return length * width
+def calculate_perimeter(length, width):
+	return 2 * (length + width)
+
+
+
+Cuboid.py
+
+def calculate_surface_area(length, width, height):
+	return 2 * (length * width + width * height + height * length)
+def calculate_volume(length, width, height):
+	return length * width * height
+
+
+Sphere.py
+
+
+import math
+def calculate_surface_area(radius):
+	return 4 * math.pi * radius**2
+def calculate_volume(radius):
+	return (4 / 3) * math.pi * radius**3
