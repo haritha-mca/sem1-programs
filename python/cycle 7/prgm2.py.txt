@@ -1,0 +1,14 @@
+exp2.py
+file = open("file1.txt","r")
+file3 = open("file3.txt","w")
+line = file.readlines()
+for i in range(len(line)):
+if(i%2!=0):
+file3.write(line[i])
+file.close()
+file3.close()
+file1.txt
+welcome to python programming
+welcome to web programming
+welcome to c programming
+welcome to java
