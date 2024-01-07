@@ -1,0 +1,14 @@
+
+def simple_interest(name,age):
+	p=int(input("enter principle amount:"))
+	n=int(input("enter no of years:"))
+	if age>60:
+		r=12
+	else:
+		r=10
+	si=(p*n*r)/100
+	return si
+name=input("enter your name:")
+age=int(input("enter your age:"))
+si=simple_interest(name,age)
+print(name,"your simple interest amount is",si)

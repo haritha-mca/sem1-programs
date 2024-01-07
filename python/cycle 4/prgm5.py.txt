@@ -1,0 +1,20 @@
+
+def add_integers(*args):
+    """
+    Adds variable-length integer arguments.
+
+    Parameters:
+    *args (int): Variable-length integer arguments.
+
+
+    Returns:
+    int: Sum of the integer arguments.
+    """
+
+    return sum(args)
+
+input_numbers = input("Enter integers separated by spaces: ").split()
+input_numbers = [int(num) for num in input_numbers ]
+result = add_integers(*input_numbers)
+
+print("The sum of the integers is: ",result)

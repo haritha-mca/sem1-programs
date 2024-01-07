@@ -1,0 +1,11 @@
+def compare(S1, S2, n):
+    return S1[:n] == S2[:n]
+
+string1 = input("Enter the first string: ")
+string2 = input("Enter the second string: ")
+n = int(input("Enter the value of n: "))
+
+result = compare(string1, string2, n)
+print(f"The first {n} characters of both strings are {'equal' if result else 'not equal'}.")
+
+
