@@ -1,0 +1,25 @@
+class Account:
+    def __init__(self,name,ac_no,type,balance):
+    	self.name=name
+    	self.ac_no=ac_no
+    	self.type=type
+   	 self.balance=balance
+    def Deposit(self):
+amount=int(input("Enter the amount to deposit:"))
+self.balance=self.balance+amount
+    def Withdraw(self):
+amount=int(input("Enter the amount to withdraw:"))
+if(self.balance<amount):
+print("Not able to withdraw")
+else:
+self.balance=self.balance-amount
+    def display(self):
+print("Name of account holder:",self.name)
+print("Account number:",self.ac_no)
+print("Type of account:",self.type)
+print("Balance is:",self.balance)
+p1=Account("RAM",12345,"Savings",10000)
+p1.Deposit()
+p1.display()
+p1.Withdraw()
+p1.display()

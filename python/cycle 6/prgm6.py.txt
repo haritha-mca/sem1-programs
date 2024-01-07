@@ -1,0 +1,24 @@
+class VoteError(Exception):
+    pass
+class InvalidError(Exception):
+    pass
+try:
+    name = input("Enter name: ").strip() # Remove leading/trailing spaces
+    age = int(input("Enter the age: "))
+    if not name:
+        raise InvalidError("Name cannot be empty")
+    elif not name.isalpha():
+        raise InvalidError("Name should contain only alphabetic characters")
+    elif age <= 0:
+        raise InvalidError("Enter a valid age")
+    elif age < 18:
+        raise VoteError("Not eligible for voting")
+    else:
+        print("Eligible for voting")
+except VoteError as ve:
+    print(ve)
+except InvalidError as ie:
+    print(ie)
+except ValueError:
+    print("Enter a valid age")
+

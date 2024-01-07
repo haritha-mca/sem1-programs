@@ -1,0 +1,38 @@
+class Polygon():
+    def __init__(self, sides):
+        self.sides = sides
+    def get_dimensions(self):
+        pass
+    def calculate_area(self):
+        pass
+class Rectangle(Polygon):
+    def __init__(self, length, width):
+        super().__init__(sides=4)
+        self.length = length
+        self.width = width
+    def get_dimensions(self):
+        return f"Length: {self.length}, Width: {self.width}"
+    def calculate_area(self):
+        return self.length * self.width
+class Triangle(Polygon):
+    def __init__(self, base, height):
+        super().__init__(sides=3)
+        self.base = base
+        self.height = height
+    def get_dimensions(self):
+        return f"Base: {self.base}, Height: {self.height}"
+    def calculate_area(self):
+        return 0.5 * self.base * self.height
+l=int(input("enter length of rectangle:"))
+w=int(input("enter width of rectangle:"))
+b=int(input("enter base of triangle:"))
+h=int(input("enter height of triangle:"))
+rectangle = Rectangle(l,w)
+triangle = Triangle(b,h)
+print("Rectangle:")
+print(rectangle.get_dimensions())
+print(f"Area: {rectangle.calculate_area()}")
+print("\nTriangle:")
+print(triangle.get_dimensions())
+print(f"Area: {triangle.calculate_area()}")
+
