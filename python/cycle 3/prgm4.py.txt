@@ -1,0 +1,9 @@
+start=int(input("Enter the start of range:"))
+end=int(input("Enter the end of range:"))
+perfect=[]
+for num in range(start,end+1):
+    	if all(int(digit)%2==0 for digit in str(num)):
+            	if(int(num**0.5))**2==num:
+                    	perfect.append(num)
+print("Four_digit numbers with all even digits that are perfect squares:")
+print(perfect)
